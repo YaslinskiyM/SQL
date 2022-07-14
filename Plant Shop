@@ -1,3 +1,16 @@
-CREATE DATABASE plantgalore;
+CREATE DATABASE Plants;
 
-CREATE TABLE 
+CREATE TABLE plant_shop (id INTEGER PRIMARY KEY, plant_name TEXT, retail_price INTEGER, wholesale_price INTEGER, quantity INTEGER);
+
+INSERT INTO plant_shop VALUES (1, "monstera", 50, 30, 4),
+(2, "calathea", 20, 10, 6),
+(3, "begonia", 30, 15, 2), 
+(4, "philodendron", 10, 20, 2);
+
+****Show list with new titles "viewer friendly", while showing plants that are least to most expensive***
+
+SELECT plant_name AS "Plant", retail_price AS "Price", wholesale_price AS "Bundle Price", quantity  FROM pl
+ant_shop ORDER BY retail_price;
+
+****Please update Philodendron price to reflect price 25****
+UPDATE plant_shop SET retail_price=25 WHERE plant_name="philodendron";
