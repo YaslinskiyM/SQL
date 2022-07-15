@@ -1,1 +1,33 @@
+CREATE DATABASE Plants;
 
+CREATE TABLE plant_shop (id INTEGER PRIMARY KEY, plant_name TEXT, retail_price INTEGER, wholesale_price INTEGER, quantity INTEGER);
+
+INSERT INTO plant_shop VALUES (1, "monstera", 50, 30, 4),
+(2, "calathea", 20, 10, 6),
+(3, "begonia", 30, 15, 2), 
+(4, "philodendron", 10, 20, 2),
+(5, "alocasia", 10, 5, 6),
+(6, "ficus", 35, 20, 4),
+(7, "bonsai", 25, 20, 3),
+(8, "fern", 10, 5, 2),
+(9, "hoya", 15, 00, 8),
+(10, "anthurium", 30, 20, 3),
+(11, "pothos", 10, 5, 1),
+(12, "palm", 8, 5, 6),
+(13, "aloe", 10, 5, 7),
+(14, "tradescantia", 30, 30, 5),
+(15, "ivy", 80, 50, 2),
+(16, "dracaena", 10, 5, 2);
+
+****Show list with plants name and retail price together and rename the title ***
+  SELECT  
+  CONCAT (plant_name,' ', '$', retail_price) AS 'pricing' FROM plant_shop;
+
+****Please only show plants with retail price is at $15 and under 15 dollars****
+  SELECT 
+  CONCAT (plant_name,' ', '$', retail_price) AS 'pricing' FROM plant_shop  WHERE retail_price 
+  <=15;
+****Please show monstera plant as none available, only display retail price and wholesale price with plant names. 
+  SELECT REPLACE (plant_name, 'monstera', 'none available') 
+  AS available_plants, retail_price, wholesale_price 
+  FROM plant_shop;
